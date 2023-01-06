@@ -1,7 +1,8 @@
 import camelcaseKeys from 'camelcase-keys'
 
 import router from '@/router'
-import { useTokenStore } from '@/stores/token'
+
+import { useTokenStore } from '../stores/token'
 
 const BASE_URL = 'http://localhost:8000'
 

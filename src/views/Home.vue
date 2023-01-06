@@ -1,8 +1,11 @@
 <script setup lang="ts">
+  import PageHeader from '@/components/PageHeader.vue'
 </script>
 
 <template>
-<v-container>
-	<h1>Inicio</h1>
-</v-container>
+  <v-container>
+    <PageHeader title="Inicio" />
+  </v-container>
 </template>
+
+<style scoped></style>
