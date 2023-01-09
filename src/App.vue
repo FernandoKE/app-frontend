@@ -17,15 +17,35 @@
   <v-app>
     <v-app-bar v-if="tokenStore.isAuthenticated" class="bg-teal-darken-1">
       <v-toolbar-title class="">
-        <span>MyApp</span>
+        <span>Raffle App</span>
       </v-toolbar-title>
       <v-toolbar-items>
         <v-btn :to="{ name: 'Home' }">Inicio</v-btn>
+        <v-btn
+          :to="{ name: 'ListUsers' }"
+        >
+          Rifas
+        </v-btn>
+        <v-btn
+          :to="{ name: 'ListUsers' }"
+        >
+          Ranking Usuarios
+        </v-btn>
+        <v-btn
+          :to="{ name: 'ListUsers' }"
+        >
+          Historial
+        </v-btn>
         <v-btn
           v-show="checkRoutePermission('ListUsers')"
           :to="{ name: 'ListUsers' }"
         >
           Usuarios
+        </v-btn>
+        <v-btn
+          :to="{ name: 'ListUsers' }"
+        >
+          Saldo: ${{ tokenStore.user?.username }}
         </v-btn>
         <v-menu bottom offset-y close-on-click>
           <template #activator="{ props }">

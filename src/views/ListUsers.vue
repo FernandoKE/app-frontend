@@ -43,7 +43,7 @@
               <th>Usuario</th>
               <th>Nombre</th>
               <th>Activo</th>
-              <th>Grupos</th>
+              <th>Roles</th>
               <th></th>
             </tr>
           </thead>
@@ -59,11 +59,11 @@
               <td><v-icon :icon="activeIcon(user)"></v-icon></td>
               <td>
                 <v-chip
-                  v-for="group in user.groups"
-                  :key="group.id"
+                  v-for="role in user.roles"
+                  :key="role.id"
                   class="mx-1"
                 >
-                  {{ group.name }}
+                  {{ role.name }}
                 </v-chip>
               </td>
               <td>

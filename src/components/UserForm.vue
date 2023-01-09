@@ -3,8 +3,8 @@
 
   import PasswordInput from '@/components/PasswordInput.vue'
 
-  import { getGroups, getUsers } from '@/api/users'
-  import { Group, User, UserEdit } from '@/interfaces'
+  import { getRoles, getUsers } from '@/api/users'
+  import { Role, User, UserEdit } from '@/interfaces'
 
   interface Props {
     userData: UserEdit
@@ -31,7 +31,7 @@
   })
 
   const existingUsers: Ref<User[]> = ref([])
-  const groups: Ref<Group[]> = ref([])
+  const roles: Ref<Role[]> = ref([])
   const updateImage: Ref<boolean> = ref(false)
 
   // clean up image data when the user cancels the image update
@@ -64,8 +64,8 @@
     existingUsers.value = users.filter((x) => x.id !== props.userId)
   }
 
-  async function fetchGroups() {
-    groups.value = await getGroups()
+  async function fetchRoles() {
+    roles.value = await getRoles()
   }
 
   async function submitForm() {
@@ -77,7 +77,7 @@
   }
 
   fetchUsers()
-  fetchGroups()
+  fetchRoles()
 </script>
 
 <template>
@@ -104,13 +104,13 @@
       type="number"
     ></v-text-field>
     <v-select
-      v-model="userData.groupIds"
-      :items="groups"
+      v-model="userData.roleIds"
+      :items="roles"
       item-title="name"
       item-value="id"
       multiple
       chips
-      label="Grupos"
+      label="Roles"
     >
     </v-select>
     <v-checkbox

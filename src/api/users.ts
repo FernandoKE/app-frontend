@@ -1,7 +1,7 @@
 import snakecaseKeys from 'snakecase-keys'
 
 import { apiFetch } from '../api'
-import { Group, User, UserEdit } from '../interfaces'
+import { Role, User, UserEdit } from '../interfaces'
 
 async function getUsers(): Promise<User[]> {
   return apiFetch('/users')
@@ -53,8 +53,8 @@ async function changePassword(
   )
 }
 
-async function getGroups(): Promise<Group[]> {
-  return apiFetch('/groups')
+async function getRoles(): Promise<Role[]> {
+  return apiFetch('/roles')
 }
 
 export {
@@ -64,5 +64,5 @@ export {
   patchUser,
   setUserImage,
   changePassword,
-  getGroups,
+  getRoles,
 }

@@ -1,5 +1,5 @@
 import { BASE_URL } from '@/api'
-import { Group } from '@/interfaces'
+import { Role } from '@/interfaces'
 import router from '@/router'
 import { useTokenStore } from '@/stores/token'
 
@@ -11,10 +11,10 @@ function checkRoutePermission(
   const user = tokenStore.user
   const route = router.resolve({ name: routeName, params: routeParams })
 
-  if (user !== null && user.groups) {
-    if (route.meta.allowedGroups) {
-      return user.groups.some((group: Group) =>
-        (route.meta.allowedGroups as string[]).includes(group.name)
+  if (user !== null && user.roles) {
+    if (route.meta.allowedRoles) {
+      return user.roles.some((role: Role) =>
+        (route.meta.allowedRoles as string[]).includes(role.name)
       )
     }
     return true

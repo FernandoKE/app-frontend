@@ -6,7 +6,7 @@
   import UserForm from '@/components/UserForm.vue'
 
   import { postUser, setUserImage } from '@/api/users'
-  import { UserEdit } from '../interfaces'
+  import { UserEdit } from '@/interfaces'
 
   const router = useRouter()
 
@@ -16,7 +16,7 @@
     password: '',
     age: null,
     image: [],
-    groupIds: [],
+    roleIds: [],
   })
   const saving: Ref<boolean> = ref(false)
   const errorMessage: Ref<string> = ref('')

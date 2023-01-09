@@ -31,7 +31,7 @@
       fullname: userData.value.fullname,
       age: userData.value.age,
       isActive: userData.value.isActive,
-      groupIds: userData.value.groups.map((x) => x.id),
+      roleIds: userData.value.roles.map((x) => x.id),
     }
   }
 

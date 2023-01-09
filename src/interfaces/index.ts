@@ -1,4 +1,4 @@
-export interface Group {
+export interface Role {
   id: number
   name: string
   isActive: boolean
@@ -11,7 +11,7 @@ export interface User {
   age: number
   imagePath: string
   isActive: boolean
-  groups: Group[]
+  roles: Role[]
 }
 
 export interface UserEdit {
@@ -21,7 +21,7 @@ export interface UserEdit {
   isActive?: boolean
   age?: number | null
   image?: File[]
-  groupIds?: number[]
+  roleIds?: number[]
 }
 
 export interface Token {
